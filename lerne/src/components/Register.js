@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import Header from "./Header";
 function Register(){
 
     const [name, updateName] = useState("");
@@ -7,6 +8,11 @@ function Register(){
     const [password, updatePassword] = useState(""); 
     const navigate = useNavigate();
 
+    useEffect(() => { // No entiendo la necesidad de poner useEfecct, por que no solo poner el if y ya?
+        if(localStorage.getItem('session')){
+            navigate('/add');
+        }
+    });
     async function ejectRegister(){
         let response = await fetch("http://127.0.0.1:8000/api/register", {
             method: "POST",
@@ -23,7 +29,9 @@ function Register(){
     }
 
     return (
-      <div className="col-sm-6 offset-sm-3">
+        <>
+        <Header />
+              <div className="col-sm-6 offset-sm-3">
         <h1>This is Register</h1>
 
         <input type="text" value={name} onChange={(event) =>updateName(event.target.value)} className="form-control" placeholder="type your name" />
@@ -34,6 +42,8 @@ function Register(){
         <br />
         <button onClick={ejectRegister} className="btn btn-primary" >Register</button>
       </div>
+        </>
+
     );
   }
   

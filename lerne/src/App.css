@@ -16,6 +16,10 @@
 .separator{
   padding-left: 30px;
 }
+
+.userNav{
+  padding-left: 30px;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
