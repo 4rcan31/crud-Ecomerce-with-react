@@ -24,7 +24,6 @@ function Login(){
             "Accept" : "application/json"
         }
        });
-
        response = await response.json();
        if(response.res){
         localStorage.setItem("session", JSON.stringify(response.msg));
