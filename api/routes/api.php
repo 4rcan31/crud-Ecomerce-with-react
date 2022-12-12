@@ -21,8 +21,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+
+
+Route::group(['middleware' => ['cors']], function () {
+    
+});
+
 Route::post('/register', [users::class, 'register']);
 
 Route::post('/login', [users::class, 'login']);
 
-Route::post('/addproduct', [ProductController::class, 'addProduct']);
+Route::post('/addproduct', [ProductController::class, 'addproduct']);
