@@ -24,13 +24,13 @@ function Header() {
             <Link className="separator" to="/">
               Home
             </Link>
+            <Link className="separator" to="/products">
+              Products
+            </Link>
             {v ? (
               <>
                 <Link className="separator" to="/Add">
                   Add
-                </Link>
-                <Link className="separator" to="/Update">
-                  Update
                 </Link>
               </>
             ) : (

@@ -32,3 +32,12 @@ Route::post('/register', [users::class, 'register']);
 Route::post('/login', [users::class, 'login']);
 
 Route::post('/addproduct', [ProductController::class, 'addproduct']);
+
+
+Route::get('/products', [ProductController::class, 'getProducts']);
+
+Route::delete('/delete/{id}', [ProductController::class, 'delete']);
+
+Route::get('/product/{id}', [ProductController::class, 'getProduct']);
+
+Route::post('/updateproduct', [ProductController::class, 'updateproduct']);

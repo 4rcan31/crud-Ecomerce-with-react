@@ -20,6 +20,23 @@
 .userNav{
   padding-left: 30px;
 }
+
+.delete{
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.update{
+  background-color: green;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
